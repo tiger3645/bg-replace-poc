@@ -28,6 +28,11 @@ except Exception as e:
     session = None
 
 
+@app.get("/health")
+async def health():
+    return {"status": "ok", "rembg_session": session is not None}
+
+
 @app.post("/remove-bg")
 async def remove_background(image: UploadFile = File(...)):
     print(f"Received file: name={image.filename}, content_type={image.content_type}")
