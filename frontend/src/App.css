@@ -1,0 +1,64 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+}
+
+.app-header {
+  padding: 20px 0 12px;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #e0e0ff;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.viewport {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #1a1a2e;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.btn-capture {
+  padding: 13px 44px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.1s;
+}
+
+.btn-capture:hover:not(:disabled) {
+  background: #574fd6;
+  transform: scale(1.02);
+}
+
+.btn-capture:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
