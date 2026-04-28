@@ -25,7 +25,8 @@ export default function App() {
       const blob = await cameraRef.current.captureFrame();
       const formData = new FormData();
       formData.append('image', blob, 'frame.jpg');
-      const res = await fetch('/remove-bg', { method: 'POST', body: formData });
+      const apiUrl = import.meta.env.VITE_API_URL ?? '';
+      const res = await fetch(`${apiUrl}/remove-bg`, { method: 'POST', body: formData });
       if (!res.ok) throw new Error(`Server error ${res.status}`);
       const resultBlob = await res.blob();
       setResult(URL.createObjectURL(resultBlob));
