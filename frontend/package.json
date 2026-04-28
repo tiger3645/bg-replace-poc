@@ -9,8 +9,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@mediapipe/selfie_segmentation": "^0.1.1675465747"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.4.5",

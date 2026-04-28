@@ -1,5 +1,4 @@
 import { useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
-import { SelfieSegmentation } from '@mediapipe/selfie_segmentation';
 
 const CameraView = forwardRef(function CameraView({ activeBg }, ref) {
   const videoRef = useRef(null);
@@ -35,6 +34,7 @@ const CameraView = forwardRef(function CameraView({ activeBg }, ref) {
 
     let closed = false;
 
+    const { SelfieSegmentation } = window;
     const seg = new SelfieSegmentation({
       locateFile: (f) =>
         `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${f}`,
