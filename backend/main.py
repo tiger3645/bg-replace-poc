@@ -26,7 +26,7 @@ app.add_middleware(
 print("Loading rembg session...")
 t0 = time.time()
 try:
-    session = new_session("u2net_human_seg")
+    session = new_session("u2netp")
     print(f"rembg session loaded in {time.time() - t0:.1f}s")
 except Exception as e:
     print(f"ERROR loading rembg session: {e}")
@@ -36,7 +36,7 @@ except Exception as e:
 
 @app.get("/health")
 async def health():
-    model_path = os.path.expanduser("~/.u2net/u2net_human_seg.onnx")
+    model_path = os.path.expanduser("~/.u2net/u2netp.onnx")
     return {
         "status": "ok",
         "model_file_exists": os.path.exists(model_path),
